@@ -5,8 +5,8 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
     full_name = true,
-    highlight_git = true,      -- เพิ่มสีของไฟล์ตามสถานะ Git
-    highlight_opened_files = "all", -- ไฮไลท์ไฟล์ที่เปิดอยู่
+    highlight_git = true,
+    highlight_opened_files = "all",
 
     icons = {
       webdev_colors = true,
@@ -21,24 +21,24 @@ require("nvim-tree").setup({
       },
 
       glyphs = {
-        default = "󰈚",    -- ไฟล์ปกติ
+        default = "󰈚", -- ไฟล์ปกติ
         symlink = "",
 
         folder = {
           arrow_open = "",
           arrow_closed = "",
-          default = "",       -- โฟลเดอร์ปกติ
-          open = "",          -- โฟลเดอร์เปิดอยู่
-          empty = "",         -- โฟลเดอร์เปล่า
-          empty_open = "",    -- โฟลเดอร์เปล่าที่เปิดอยู่
-          symlink = "",       -- โฟลเดอร์ Symlink
+          default = "", -- โฟลเดอร์ปกติ
+          open = "", -- โฟลเดอร์เปิดอยู่
+          empty = "", -- โฟลเดอร์เปล่า
+          empty_open = "", -- โฟลเดอร์เปล่าที่เปิดอยู่
+          symlink = "", -- โฟลเดอร์ Symlink
           symlink_open = "",
         },
 
         git = {
-          unstaged = "",     -- ยังไม่ได้ stage
-          staged = "S",       -- stage แล้ว
-          unmerged = "",     -- conflict
+          unstaged = "", -- ยังไม่ได้ stage
+          staged = "S", -- stage แล้ว
+          unmerged = "", -- conflict
           renamed = "➜",
           untracked = "★",
           deleted = "",

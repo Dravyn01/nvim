@@ -4,7 +4,10 @@ require("lazy").setup({
   { "sainnhe/sonokai" },
   { "morhetz/gruvbox" },
   { "shaunsingh/nord.nvim" },
-  { "ntk148v/habamax.nvim", dependencies = { "rktjmp/lush.nvim" } },
+  { "ntk148v/habamax.nvim",             dependencies = { "rktjmp/lush.nvim" } },
+
+  -- line
+  { 'nvim-lualine/lualine.nvim',        config = function() require("plugins.lua-line") end },
 
   -- lsp
   { "neovim/nvim-lspconfig" },
@@ -14,21 +17,21 @@ require("lazy").setup({
   { "williamboman/mason.nvim" },
 
   -- autocompletion
-  { "hrsh7th/nvim-cmp", config = function() require("plugins.autocomplete") end },
+  { "hrsh7th/nvim-cmp",                 config = function() require("plugins.autocomplete") end },
   { "hrsh7th/cmp-nvim-lsp" },
   { "L3MON4D3/LuaSnip" },
 
   -- treesitter
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter",  run = ":TSUpdate" },
 
   -- error lens
-  { "folke/trouble.nvim", config = function() require("trouble").setup{} end },
+  { "folke/trouble.nvim",               config = function() require("trouble").setup {} end },
 
   -- formatting
-  { "stevearc/conform.nvim", config = function() require("plugins.conform") end },
+  { "stevearc/conform.nvim",            config = function() require("plugins.conform") end },
 
   -- auto () [] {}
-  { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup{} end },
+  { "windwp/nvim-autopairs",            config = function() require("nvim-autopairs").setup {} end },
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -38,7 +41,7 @@ require("lazy").setup({
   },
 
   -- warning/err/doc too tip
-  {'nvimdev/lspsaga.nvim', config = function() require('lspsaga').setup({}) end },
+  { 'nvimdev/lspsaga.nvim', config = function() require('lspsaga').setup({}) end },
 
   {
     "nvim-tree/nvim-tree.lua",

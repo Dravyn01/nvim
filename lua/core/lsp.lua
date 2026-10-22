@@ -1,42 +1,51 @@
-require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = 
-    { 
-      'jdtls', 
-      'gopls', 
-      -- 'rust_analyzer', 
-      -- 'lua_ls', 
-      'tsserver', 
-      'html', 
-      'emmet_ls',
-      'pyright'
-    },
+require("mason").setup()
+
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    -- "jdtls",
+    -- "gopls",
+    -- "rust_analyzer",
+    "lua_ls",
+    "clangd",
+    "ts_ls",
+    "html",
+    "emmet_ls",
+    "pyright",
+    "powershell_es",
+  },
 })
 
--- settings language
-require('lspconfig').jdtls.setup({})
-require('lspconfig').gopls.setup({})
--- require('lspconfig').rust_analyzer.setup()
--- require('lspconfig').lua_ls.setup()
-require('lspconfig').ts_ls.setup({})
-require('lspconfig').html.setup({})
-require('lspconfig').emmet_ls.setup({})
-require('lspconfig').pyright.setup({})
+-- Lua lsp for neovim
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {
+          vim.env.VIMRUNTIME,
+        },
+        checkThirdParty = false,
+      },
+    },
+  },
+})
 
--- settings syntax highlighting
-require('nvim-treesitter.configs').setup({
-  ensure_installed = { 
-    --  'lua', 
-    'java', 
-    'go', 
-    -- 'rust', 
-    'javascript', 
-    'typescript',
-    'html',
-    'python'
-  },
-  sync_install = false,
-  highlight = {
-    enable = true,
-  },
+-- clangd: use your existing MSYS2 installation
+vim.lsp.config("clangd", {
+  cmd = { "C:/msys64/ucrt64/bin/clangd.exe" },
+})
+
+vim.lsp.enable({
+  "lua_ls",
+  "clangd",
+  "ts_ls",
+  "html",
+  "emmet_ls",
+  "pyright",
+  "powershell_es",
 })
