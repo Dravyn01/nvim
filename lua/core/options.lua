@@ -1,3 +1,5 @@
+vim.o.wrap = false
+
 vim.opt.nu = true
 -- vim.opt.relativenumber = true -- แสดงเลขบรรทัดแบบสัมพัทธ์
 vim.opt.mouse = "a"        -- เปิดใช้งานเมาส์ในทุกโหมด
@@ -15,8 +17,6 @@ vim.opt.cmdheight = 1
 
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
-
-vim.o.wrap = true
 
 -- SEARCH
 vim.opt.incsearch = true

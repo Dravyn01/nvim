@@ -1,10 +1,9 @@
 require("mason").setup()
-
 require("mason-lspconfig").setup({
   ensure_installed = {
     -- "jdtls",
     -- "gopls",
-    -- "rust_analyzer",
+    "rust_analyzer",
     "lua_ls",
     "clangd",
     "ts_ls",
@@ -48,4 +47,5 @@ vim.lsp.enable({
   "emmet_ls",
   "pyright",
   "powershell_es",
+  "rust_analyzer",
 })

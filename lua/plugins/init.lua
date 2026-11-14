@@ -9,6 +9,9 @@ require("lazy").setup({
   -- line
   { 'nvim-lualine/lualine.nvim',        config = function() require("plugins.lua-line") end },
 
+  -- telescope
+  { 'nvim-telescope/telescope.nvim',    config = function() require("plugins.telescope") end },
+
   -- lsp
   { "neovim/nvim-lspconfig" },
 
@@ -22,16 +25,20 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
 
   -- treesitter
-  { "nvim-treesitter/nvim-treesitter",  run = ":TSUpdate" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function() require("plugins.treesitter") end
+  },
 
   -- error lens
-  { "folke/trouble.nvim",               config = function() require("trouble").setup {} end },
+  { "folke/trouble.nvim",    config = function() require("trouble").setup {} end },
 
   -- formatting
-  { "stevearc/conform.nvim",            config = function() require("plugins.conform") end },
+  { "stevearc/conform.nvim", config = function() require("plugins.conform") end },
 
   -- auto () [] {}
-  { "windwp/nvim-autopairs",            config = function() require("nvim-autopairs").setup {} end },
+  { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end },
 
   {
     "lukas-reineke/indent-blankline.nvim",
